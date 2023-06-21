@@ -1,0 +1,14 @@
+version: "3"
+services:
+  gihansoftmongo:
+    image: mongo:latest
+    container_name: "gihansoftmongo"
+    ports:
+      - 27017:27017
+  springboot-mongodb:
+    image: springboot-mongadb:1.0
+    container_name: springboot-mongodb
+    ports:
+      - 8082:8082
+    links:
+      - gihansoftmongo
